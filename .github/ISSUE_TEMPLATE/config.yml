@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Documentation
+    url: https://docs.reearth.io
+    about: Guides and references for Re:Earth. Worth a look before opening an issue.
+  - name: Website
+    url: https://reearth.io
+    about: Learn more about Re:Earth.
+  - name: Email the core committers
+    url: mailto:community@reearth.io
+    about: Reach the Re:Earth core team directly. Use this for security issues, not public issues.

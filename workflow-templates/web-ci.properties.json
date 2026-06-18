@@ -1,0 +1,6 @@
+{
+  "name": "Web CI (pnpm)",
+  "description": "Install, lint, test, and build a pnpm project on the Node LTS.",
+  "categories": ["Continuous integration", "JavaScript", "TypeScript", "Node"],
+  "filePatterns": ["pnpm-lock.yaml$"]
+}

@@ -1,0 +1,29 @@
+# Web CI: install, lint, test, and build a pnpm project.
+# Matches the Re:Earth house setup — pnpm with a frozen lockfile on the Node LTS.
+# In a server/web monorepo (see reearth/scaffold), set `working-directory: web`.
+name: CI (Web)
+
+on:
+  push:
+    branches: ["$default-branch"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  ci:
+    name: ci
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: lts/*
+          cache: pnpm
+          cache-dependency-path: "**/pnpm-lock.yaml"
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run lint
+      - run: pnpm run test
+      - run: pnpm run build

@@ -1,0 +1,33 @@
+# Rust CI: check formatting, run clippy, and run tests.
+# Uses the toolchain preinstalled on the runner. If builds get slow, add a cache
+# step such as Swatinem/rust-cache.
+name: CI (Rust)
+
+on:
+  push:
+    branches: ["$default-branch"]
+  pull_request:
+
+permissions:
+  contents: read
+
+env:
+  CARGO_INCREMENTAL: 0
+  CARGO_NET_RETRY: 10
+  RUSTUP_MAX_RETRIES: 10
+  RUST_BACKTRACE: short
+
+jobs:
+  ci:
+    name: fmt / clippy / test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - name: install components
+        run: rustup component add clippy rustfmt
+      - name: format
+        run: cargo fmt --all -- --check
+      - name: clippy
+        run: cargo clippy --all-targets --all-features -- -D warnings
+      - name: test
+        run: cargo test --all-features

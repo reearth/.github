@@ -1,0 +1,6 @@
+{
+  "name": "Rust CI",
+  "description": "Check formatting, run clippy with warnings denied, and run tests.",
+  "categories": ["Continuous integration", "Rust"],
+  "filePatterns": ["Cargo.toml$"]
+}
