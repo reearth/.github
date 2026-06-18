@@ -1,0 +1,6 @@
+{
+  "name": "Go CI",
+  "description": "Lint with golangci-lint and run tests. Reads the Go version from go.mod.",
+  "categories": ["Continuous integration", "Go"],
+  "filePatterns": ["go.mod$"]
+}
