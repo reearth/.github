@@ -1,0 +1,14 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 💬 Questions and discussion
+    url: https://discord.com/invite/XJhYkQQDAu
+    about: Ask how to use Re:Earth, share what you built, or get help from the community. Issues are for bugs and feature requests.
+  - name: 📖 Documentation
+    url: https://docs.reearth.io/en/
+    about: User guides for Visualizer, CMS and Flow.
+  - name: 🛠 Developer documentation
+    url: https://visualizer.developer.reearth.io/
+    about: APIs and plugin development.
+  - name: 🔒 Report a security vulnerability
+    url: https://github.com/reearth/.github/blob/main/SECURITY.md
+    about: Please do not report vulnerabilities in public issues.
